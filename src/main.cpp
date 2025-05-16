@@ -16,6 +16,5 @@ int main(void)
     for (unsigned int i = 0; i < 4; ++i) {
         std::cout << result[i] << " ";
     }
-
     return 0;
 }
