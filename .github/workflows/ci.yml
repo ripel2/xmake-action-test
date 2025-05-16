@@ -35,7 +35,7 @@ jobs:
         uses: ilammy/msvc-dev-cmd@v1
 
       - name: Install xmake
-        uses: xmake-io/github-action-setup-xmake@master
+        uses: xmake-io/github-action-setup-xmake@v1
         with:
           xmake-version: latest
           actions-cache-folder: '.xmake-cache'
