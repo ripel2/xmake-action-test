@@ -1,0 +1,14 @@
+{
+    packages = {
+        [[C:\Users\lucas\AppData\Local\.xmake\packages\e\entt\v3.15.0\18a7c66ceb6a4245aa7ca5b637cbf536]],
+        [[C:\Users\lucas\AppData\Local\.xmake\packages\g\glm\1.0.1\788496219b2d40629f92bac6907b6bba]],
+        [[C:\Users\lucas\AppData\Local\.xmake\packages\o\opengl\latest\b1caf5aecf3447d1bfaf66081135de32]],
+        [[C:\Users\lucas\AppData\Local\.xmake\packages\g\glfw\3.4\fc47358da159466996f7d289b4cf1b4e]],
+        [[C:\Users\lucas\AppData\Local\.xmake\packages\g\glew\2.2.0\6a8fc1e310a44318beb712a418386242]],
+        [[C:\Users\lucas\AppData\Local\.xmake\packages\s\spdlog\v1.15.2\abd3c5586b954ca3a9d77b9472f5d2fa]],
+        [[C:\Users\lucas\AppData\Local\.xmake\packages\f\fmt\11.1.4\d3052220889d449797174163cbd7ccb1]],
+        [[C:\Users\lucas\AppData\Local\.xmake\packages\s\stb\2025.03.14\5add428b704648039c039d4d74bed865]],
+        [[C:\Users\lucas\AppData\Local\.xmake\packages\j\joltphysics\v5.3.0\f316784e5b7b45ad92cf0ff78717bdbf]],
+        [[C:\Users\lucas\AppData\Local\.xmake\packages\m\miniaudio\0.11.22\9f094b14e9924102a799ab96338574b0]]
+    }
+}

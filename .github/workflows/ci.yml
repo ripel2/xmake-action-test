@@ -1,0 +1,53 @@
+name: ci
+
+on:
+  push:
+    branches-ignore:
+      - 'ga-ignore-**'
+      - 'gh-pages'
+
+jobs:
+  test_ci:
+    name: Build and verify binaries
+    strategy:
+      matrix:
+        include:
+          - os: windows-latest
+          - os: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Pull latest changes
+        run: git pull origin ${{ github.ref_name }}
+
+      - name: Setup Linux dependencies
+        if: contains(runner.os, 'windows') == false
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev mesa-utils
+
+      - name: Setup Windows dependencies
+        if: contains(runner.os, 'windows')
+        uses: ilammy/msvc-dev-cmd@v1
+
+      - name: Install xmake
+        uses: ripel2/github-action-setup-xmake@v1
+        with:
+          xmake-version: latest
+          actions-cache-folder: '.xmake-cache'
+          actions-cache-key: '${{ runner.os }}-xmake-install'
+          package-cache: true
+          package-cache-key: '${{ runner.os }}-xmake-entt-glm'
+          project-path: '.'
+
+      - name: Build project
+        run: xmake build -y
+        timeout-minutes: 8
+
+      - name: Try to run the project
+        run: |
+          xmake run
